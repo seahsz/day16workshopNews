@@ -8,16 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import vttp.ssf.day16workshop.services.indexService;
+import vttp.ssf.day16workshop.services.IndexService;
 
 import static vttp.ssf.day16workshop.Constants.*;
 
 @Controller
 @RequestMapping
-public class indexController {
+public class IndexController {
 
     @Autowired
-    private indexService indexSvc;
+    private IndexService indexSvc;
 
     @GetMapping(path = { "/", "index.html" })
     public String getIndex(Model model) {

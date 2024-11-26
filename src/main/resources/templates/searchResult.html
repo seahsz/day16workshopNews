@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Your Results</title>
 </head>
 <body>
     
-    
+    <div data-th-object="${searchParam}">
+        <h1>These are the search results for your search:
+        </h1>
+    </div>
+
+    <div data-th-if="${not #lists.isEmpty(newsList)}">
+        <div data-th-each="news : ${newsList}" data-th-object="${news}">
+            <h2 data-th-text="${title}"></h2>
+            <img data-th-src="${imgUrl}">
+            <h4 data-th-text="${content}"></h4>
+            <a data-th-href="${url}">Go to Full Article</a>
+        </div>
+    </div>
 
 </body>
 </html>

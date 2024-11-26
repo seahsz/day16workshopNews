@@ -17,7 +17,7 @@ import jakarta.json.JsonArray;
 import jakarta.json.JsonReader;
 
 @Service
-public class indexService {
+public class IndexService {
 
     public static final String GET_COUNTRY_NAME_AND_CCA2_URL = "https://restcountries.com/v3.1/all?fields=name,cca2";
 
