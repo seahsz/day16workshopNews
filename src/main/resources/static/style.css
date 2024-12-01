@@ -1,0 +1,12 @@
+/* Container for images */
+.image-container {
+    height: 400px; /* Set your desired height */
+    overflow: hidden; /* Hide overflow to maintain consistent height */
+}
+
+/* Style for images */
+.image-container img {
+    height: 100%; /* Set height to 100% of the container */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container without distortion */
+}

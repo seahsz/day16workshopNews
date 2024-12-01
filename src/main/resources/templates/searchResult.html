@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div data-th-object="${searchParam}">
+        <h1>These are the search results for your search: 
+            <span data-th-if="${not #strings.isEmpty(searchParam.query)}">Query(<span data-th-text="*{query}"></span>)</span>
+            <span data-th-if="${not #strings.isEmpty(searchParam.query)} and ${not #strings.isEmpty(searchParam.country)}">,</span>
+            <span data-th-if="${not #strings.isEmpty(searchParam.country)}">Country(<span data-th-text="*{country}"></span>)</span>
+            <span data-th-if="${not #strings.isEmpty(searchParam.country)} and ${not #strings.isEmpty(searchParam.category)}">,</span>
+            <span data-th-if="${not #strings.isEmpty(searchParam.category)}">Category(<span data-th-text="*{category}"></span>)</span>
+        </h1>
+    </div>
+
+    <div>
+        <form method="GET" action="/">
+            <button type="submit">Return to Search</button>
+        </form>
+    </div>
+
+    <div data-th-if="${not #lists.isEmpty(newsList)}">
+        <div data-th-each="news : ${newsList}" data-th-object="${news}">
+            <h2 data-th-text="*{title}"></h2>
+            <div class="image-container">
+                <img data-th-src="*{imgUrl}" class="uniform-height">
+            </div>
+            <p data-th-text="*{content}"></p>
+            <a data-th-href="*{url}">Go to Full Article</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
